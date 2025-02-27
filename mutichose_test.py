@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import imutils
+import glob
 
 
 # دالة لترتيب النقاط (لتحويل المنظور)
@@ -132,7 +133,7 @@ for q, cnts_row in enumerate(questions):
 
 # حساب النسبة النهائية للإجابات الصحيحة
 score = (correct / len(answer_key)) * 100
-print("الدرجة النهائية: {:.2f}%".format(score))
+print("Final degree: {:.2f}%".format(score))
 cv2.putText(
     paper,
     "{:.2f}%".format(score),
@@ -144,7 +145,7 @@ cv2.putText(
 )
 
 # عرض النتائج النهائية
-cv2.imshow("الصورة الأصلية", orig)
-cv2.imshow("ورقة الاختبار بعد المعالجة", paper)
+cv2.imshow("Orginal Image", orig)
+cv2.imshow("Exam paper after perprocessing", paper)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
